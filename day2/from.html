@@ -6,41 +6,120 @@
     <title>Document</title>
 </head>
 <body>
-    <header><h1>Registration form</h1></header>
-   <main>
-     <form action="submit.html">
-       <label for="name:">Name:</label>
-       <input type="text" name="name" id="name" required>
-       <br><br>
-       <label for="rollno">Rollno:</label>
-       <input type="number" name="rollno" id="rollno" required>
-       <br><br>
-        <label for="email:">e-mail:</label>
-       <input type="email" name="email" id="email" required>
-       <br><br>
-       <label for="gender">Gender</label>
-       <br><br>
-       <input type="radio" name="gender" id="male">male
-       <input type="radio" name="gender" id="female">female
-       <br>
-       <br>
-       <label for="language">Language</label>
-       <select name="language" id="language">
-       <option value="select-language" selected>select-language</option>
-       <option value="c++">C++</option>
-       <option value="java">JAVA</option>
-       <option value="python">python</option>
-       </select>
+   <div class="container">
+    <h1>Student Registration Form</h1>
 
-         <br><br>
+    <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+      <!-- Roll no -->
+      <label for="roll">Roll no. :</label>
+      <div>
+        <input id="roll" name="roll" type="text" placeholder="Enter roll number" class="wide-input" />
+      </div>
 
-         <input type="submit" value="submit">
-         <input type="reset" value="reset">
-      
+      <!-- Student name -->
+      <label for="firstName">Student name :</label>
+      <div class="name-row">
+        <input id="firstName" name="firstName" type="text" placeholder="First Name" />
+        <span style="align-self:center;font-size:18px;"> - </span>
+        <input id="lastName" name="lastName" type="text" placeholder="Last Name" />
+      </div>
+
+      <!-- Father's name -->
+      <label for="father">Father's name :</label>
+      <div>
+        <input id="father" name="fatherName" type="text" placeholder="Father's full name" />
+      </div>
+
+      <!-- Date of birth -->
+      <label for="dob">Date of birth :</label>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="dob-row" style="align-items:center;">
+          <input id="dob-day" name="dob_day" type="text" inputmode="numeric" maxlength="2" class="dob-input" placeholder="Day" />
+          <span style="font-weight:600;"> - </span>
+          <input id="dob-month" name="dob_month" type="text" inputmode="numeric" maxlength="2" class="dob-input" placeholder="Month" />
+          <span style="font-weight:600;"> - </span>
+          <input id="dob-year" name="dob_year" type="text" inputmode="numeric" maxlength="4" class="dob-input" placeholder="Year" />
+        </div>
+        <div class="dob-help">(DD-MM-YYYY)</div>
+      </div>
+
+      <!-- Mobile -->
+      <label for="mobile">Mobile no. :</label>
+      <div class="phone-row">
+        <input class="phone-code" value="+91" readonly />
+        <input id="mobile" name="mobile" type="text" placeholder="Enter mobile number" inputmode="numeric" />
+      </div>
+
+      <!-- Email -->
+      <label for="email">Email id :</label>
+      <div>
+        <input id="email" name="email" type="email" placeholder="yourname@example.com" />
+      </div>
+
+      <!-- Password -->
+      <label for="password">Password :</label>
+      <div>
+        <input id="password" name="password" type="password" placeholder="Create password" />
+      </div>
+
+      <!-- Gender -->
+      <label>Gender :</label>
+      <div class="gender-row" aria-label="gender">
+        <label style="font-weight:normal;">
+          <input type="radio" name="gender" value="male" />&nbsp;Male
+        </label>
+        <label style="font-weight:normal;">
+          <input type="radio" name="gender" value="female" />&nbsp;Female
+        </label>
+      </div>
+
+      <!-- Department -->
+      <label for="department">Department :</label>
+      <div class="dept-row">
+        <label><input type="checkbox" name="dept[]" value="CSE" /> CSE</label>
+        <label><input type="checkbox" name="dept[]" value="IT"  /> IT</label>
+        <label><input type="checkbox" name="dept[]" value="ECE" /> ECE</label>
+        <label><input type="checkbox" name="dept[]" value="Civil" /> Civil</label>
+        <label><input type="checkbox" name="dept[]" value="Mech" /> Mech</label>
+      </div>
+
+      <!-- Course -->
+      <label for="course">Course :</label>
+      <div>
+        <select id="course" name="course" class="course-select">
+          <option value="">------------------ Select Current Course's ------------------</option>
+          <option value="btech">B.Tech</option>
+          <option value="mtech">M.Tech</option>
+          <option value="diploma">Diploma</option>
+          <option value="msc">M.Sc</option>
+          <option value="bca">BCA</option>
+        </select>
+      </div>
+
+      <!-- Student photo -->
+      <label for="photo">Student photo :</label>
+      <div class="file-upload">
+        <input id="photo" name="photo" type="file" accept="image/*" />
+      </div>
+
+      <!-- City -->
+      <label for="city">City :</label>
+      <div>
+        <input id="city" name="city" type="text" placeholder="City" />
+      </div>
+
+      <!-- Address -->
+      <label for="address">Address :</label>
+      <div>
+        <textarea id="address" name="address" placeholder="Full postal address"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div></div>
+      <div class="submit-row">
+        <button type="submit">Register</button>
+      </div>
     </form>
-   </main>
-   <footer>
-
-   </footer>
+  </div>
 </body>
 </html>
